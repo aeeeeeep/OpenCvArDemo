@@ -15,7 +15,7 @@ A simple demo to try Opencv in AR with python
 
 如：
 
-![](https://aeeeeeep.github.io/image/AR技术分析报告/6.png)
+![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/6.png)
 
 
 
@@ -23,7 +23,7 @@ A simple demo to try Opencv in AR with python
 
 如：
 
-![](https://aeeeeeep.github.io/image/AR技术分析报告/7.png)
+![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/7.png)
 
 
 
@@ -31,7 +31,7 @@ A simple demo to try Opencv in AR with python
 
 如：
 
-![](https://aeeeeeep.github.io/image/AR技术分析报告/8.png)
+![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/8.png)
 
 
 
@@ -49,17 +49,17 @@ A simple demo to try Opencv in AR with python
 
    * OpenCV 棋盘标定纸
 
-     ![](/image/AR技术分析报告/calibration_img/9.png)
+     ![](/image/使用Opencv+Python的AR小demo/calibration_img/9.png)
 
 2. **准备图片**
 
    * 参考图片
 
-     ![](/image/AR技术分析报告/referenceImage.png)
+     ![](/image/使用Opencv+Python的AR小demo/referenceImage.png)
 
    * 用例图片
 
-     ![](/image/AR技术分析报告/sourceImage.png)
+     ![](/image/使用Opencv+Python的AR小demo/sourceImage.png)
 
 3. **相机标定原理**
 
@@ -69,7 +69,7 @@ A simple demo to try Opencv in AR with python
 
    1. 从世界坐标系转换为相机坐标系，这一步是三维点到三维点的转换，包括 $R,t$ （相机外参）等参数
 
-      ![5](https://aeeeeeep.github.io/image/AR技术分析报告/5.png)
+      ![5](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/5.png)
       $$
       \widetilde{X}_{c a m}=R(\widetilde{X}-\widetilde{C})
       $$
@@ -81,7 +81,7 @@ A simple demo to try Opencv in AR with python
 
    2. 从相机坐标系转换为图像坐标系，这一步是三维点到二维点的转换，包括 $K$（相机内参）等参数
 
-      ![](https://aeeeeeep.github.io/image/AR技术分析报告/9.png)
+      ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/9.png)
 
    
 
@@ -104,7 +104,7 @@ A simple demo to try Opencv in AR with python
 
      由图可知偏移量
 
-     ![](https://aeeeeeep.github.io/image/AR技术分析报告/10.png)
+     ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/10.png)
      $$
      (X, \quad Y, \quad Z) \mapsto\left(f X / Z+p_{x}, \quad f Y / Z+p_{y}\right)
      $$
@@ -179,7 +179,7 @@ A simple demo to try Opencv in AR with python
 
    1. 手动对焦，固定焦距，拍摄各个方面的标定板
 
-      ![](https://aeeeeeep.github.io/image/AR技术分析报告/11.png)
+      ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/11.png)
 
    2. 具体过程
 
@@ -190,7 +190,7 @@ A simple demo to try Opencv in AR with python
 
    3. 结果
 
-      ![](https://aeeeeeep.github.io/image/AR技术分析报告/13.png)
+      ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/13.png)
 
       得到 iphone 8 的相机标定矩阵为 (代码见camera_calibration.py)
 
@@ -208,7 +208,7 @@ A simple demo to try Opencv in AR with python
 
       使用ORB法进行特征检测，ORB基于FAST算法，FAST算法的原理如下
 
-      ![](https://aeeeeeep.github.io/image/AR技术分析报告/12.png)
+      ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/12.png)
 
       任选图像中的一点 $P$，以该点为圆形，$r$为半径确定一个圆，在圆上均匀取$m$个像素点，设定一个阈值$t$，如果$m$个像素点中，有连续$N$个像素点的大小均大于或小于$t$，则这个点就是角点。但是在进行FAST进行角点检测时，边缘位置的部分易混淆，针对这种情况，ORB算法通过增加图像金字塔和计算角度的方法，用Harris角点检测器把$N$个关键点进行等级排序，使用者可提取前n个自己需要的点。不同的是，ORB在进行特征点匹配时，检测出的角点需要满足尺度不变形和旋转不变性。
 
@@ -257,7 +257,7 @@ A simple demo to try Opencv in AR with python
 
       结果
 
-        ![](https://aeeeeeep.github.io/image/AR技术分析报告/1.png)
+        ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/1.png)
 
 
    3. 特征匹配
@@ -266,7 +266,7 @@ A simple demo to try Opencv in AR with python
 
       结果
 
-      ![](https://aeeeeeep.github.io/image/AR技术分析报告/2.png)
+      ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/2.png)
 
    
 
@@ -294,7 +294,7 @@ A simple demo to try Opencv in AR with python
 
    结果
 
-   ![](https://aeeeeeep.github.io/image/AR技术分析报告/3.png)
+   ![](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/3.png)
 
    
 
@@ -304,7 +304,7 @@ A simple demo to try Opencv in AR with python
 
 8. 结果
 
-   ![4](https://aeeeeeep.github.io/image/AR技术分析报告/4.png)
+   ![4](https://aeeeeeep.github.io/image/使用Opencv+Python的AR小demo/4.png)
 
 <details class="custom-block details" style="display: block; position: relative; border-radius: 2px; margin: 1.6em 0px; padding: 1.6em; background-color: rgb(238, 238, 238); color: rgb(44, 62, 80); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary style="outline: none; cursor: pointer;">ar_python_opencv.py</summary><pre><code class="python">
 import cv2
